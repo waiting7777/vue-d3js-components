@@ -8,8 +8,8 @@ import * as d3 from 'd3'
 export default {
   async mounted() {
     const margin = { top: 30, right: 0, bottom: 30, left: 40 }
-    const width = 800
-    const height = 600
+    const width = 600
+    const height = 400
     const color = 'steelblue'
 
     const data = [
@@ -78,6 +78,7 @@ export default {
 
     const svg = d3
       .select(this.$refs.vm__bar__chart)
+      .append('svg')
       .attr('viewBox', [0, 0, width, height])
 
     svg
@@ -100,4 +101,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.vm__bar__chart {
+  width: 600px;
+  height: 400px;
+
+  svg {
+    width: 100%;
+  }
+}
+</style>
